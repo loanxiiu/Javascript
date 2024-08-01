@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="1main.css">
+    <title>Form đăng ký</title>
+</head>
+<body>
+    <div class="main">
+        <form method="post" action="" id="form-1" class="form">
+            <h3 class="heading">Đăng ký</h3>
+            <div class="form-group">
+                <label for="fullname" class="form-label">Tên đăng nhập:</label>
+                <input type="text" name="fullname" rules="isRequired" id="fullname" placeholder="VD: Loaniuoi" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <input type="text" name="email" rules="isRequired|isEmail" id="email" placeholder="VD: email@domain.com" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Mật khẩu:</label>
+                <input type="password" name="password" rules="isRequired|min:4" id="password" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="password_confirmation" class="form-label">Nhập lại Mật khẩu:</label>
+                <input type="password" name="password_confirmation" rules="isRequired|isConfirmed" id="password_confirmation" class="form-control">
+                <span class="form-message"></span>
+            </div> -->
+<!--  -->
+
+            <button class="form-submit">Đăng ký</button>
+        </form>
+    </div>
+    
+    <script src="1validator.js"></script>
+    <script>
+        Validator('#form-1', {
+            onSubmit: function(data) {
+                console.log(data)
+            }
+        })
+    </script>
+</body>
+</html>
